@@ -15,7 +15,7 @@ print formatter % (
 # extra workout
 a = 2.1
 b = 2
-c='jpg'
+c="jpg"
 print "%d"%a
 print "%r"%b
 print "%r"%c
