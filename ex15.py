@@ -11,6 +11,8 @@ txt = open(filename)
 print "Here's your file %r:" % filename
 # tells to read 'txt' with no arguments
 print txt.read()
+# close the file
+txt.close()
 
 # prints string
 print "Type the filename again:"
@@ -22,3 +24,5 @@ txt_again = open(file_again)
 
 # reads variable 'txt_again' with no argument
 print txt_again.read()
+# close the file
+txt_again.close()
