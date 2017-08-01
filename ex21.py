@@ -33,4 +33,4 @@ print "That becomes: ", what, "Can you do it by hand?"
 
 # normal formula
 what_new = age + (height - (weight * (iq / 2)))
-print what_new
+print 'Using normal formula we get: 'what_new
