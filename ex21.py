@@ -34,3 +34,7 @@ print "That becomes: ", what, "Can you do it by hand?"
 # normal formula
 what_new = age + (height - (weight * (iq / 2)))
 print "Using normal formula we get: ", what_new
+
+# another formula
+new_formula = ((age * height) + weight) / iq
+print "Output of new formula is: ", new_formula
