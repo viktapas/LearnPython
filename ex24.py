@@ -9,7 +9,7 @@ nor comrehend passion from intuition
 and requires an explanation
 \n\t\twhere there is none.
 """
-
+# this can be replaced by: print "-" * 14
 print "--------------"
 print poem
 print "--------------"
@@ -31,6 +31,8 @@ beans, jars, crates = secret_formula(start_point)
 print "With a starting point of: %d" % start_point
 print "We'd have %d beans, %d jars, and %d crates." % (beans, jars, crates)
 
+# re-sets the start_point value
+# it can also be short-handed as start_point /= 10
 start_point = start_point / 10
 print "We can also do that this way:"
 print "We'd have %d beans, %d jars, and %d crates." % secret_formula(start_point)
