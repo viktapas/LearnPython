@@ -34,8 +34,8 @@ current_line = 1
 print_a_line(current_line, current_file)
 
 # current_line is incremented by 1 over its previous value
-current_line = current_line + 1
+current_line += 1
 print_a_line(current_line, current_file)
 
-current_line = current_line + 1
+current_line += 1
 print_a_line(current_line, current_file)
