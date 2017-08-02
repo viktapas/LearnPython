@@ -1,6 +1,6 @@
 people = 300
-cars = 115
-buses = 115
+cars = 250
+buses = 350
 
 
 if cars > people:
@@ -22,3 +22,5 @@ if people > buses:
 else:
 	print "Fine, let's stay home then."
 
+if people < buses and people > cars:
+	print "Alright, let's just take the cars."
