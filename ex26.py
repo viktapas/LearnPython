@@ -34,9 +34,6 @@ def print_first_and_last_sorted(sentence):
     print_first_word(words)
     print_last_word(words)
 
-print '\n'
-print '*' * 50
-
 print "Let's practice everything."
 print 'You\'d need to know \'bout escapes with \\ that do \n newlines and \t tabs.'
 
@@ -75,5 +72,6 @@ start_point = start_point / 10
 print "We can also do that this way:"
 print "We'd have %d beans, %d jars, and %d cartes." % secret_formula(start_point)
 
-
+print '\n'
+print '*' * 50
 
