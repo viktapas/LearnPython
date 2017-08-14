@@ -13,7 +13,14 @@ happy_bday = Song(["Happy birthday to you",
 
 bulls_on_parade = Song(["They rally around the family",
 						"With pockets full of shells"])
+# added another song
+my_song = Song(["Teri muskurahate hai takat meri",
+				"Jo tu mera humdard hai",
+				"Suhana har dard hai"])
+
 
 happy_bday.sing_me_a_song()
 
 bulls_on_parade.sing_me_a_song()
+
+my_song.sing_me_a_song()
