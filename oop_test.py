@@ -6,7 +6,7 @@ WORD_URL = "http://learncodethehardway.org/words.txt"
 WORDS = []
 
 PHRASES = {
-	"class X(%%%):":
+	"class %%%(%%%):":
 		"Make a class named %%% that is-a %%%.",
 	"class %%%(object):\n\tdef __init__(self, ***)":
 		"class %%% has-a function named __init__ that takes self and *** parameters.",
@@ -45,7 +45,7 @@ def convert(snippet, phrases):
 			result = sentence[:]
 
 			# fake class names
-			for word in cass_names:
+			for word in class_names:
 				result = result.replace("%%%", word, 1)
 
 			# fake other anmes
@@ -53,7 +53,7 @@ def convert(snippet, phrases):
 				result = result.replace("***", word, 1)
 
 			# fake parameter lists
-			for word in paran_names:
+			for word in param_names:
 				result = result.replace("@@@", word, 1)
 
 			results.append(result)
@@ -64,7 +64,7 @@ def convert(snippet, phrases):
 # keep goint until they hit CTRL-D
 try:
 	while True:
-		snippet = PHRASES.keys()
+		snippets = PHRASES.keys()
 		random.shuffle(snippets)
 
 		for snippet in snippets:
