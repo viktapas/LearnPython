@@ -30,7 +30,7 @@ class Person(object):
 class Employee(Person):
 
 	def __init__(self, name, salary):
-		##
+		## ????????
 		super(Employee, self).__init__(name)
 		## Employee has-a salary 'salary'
 		self.salary = salary
