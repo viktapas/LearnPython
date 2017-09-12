@@ -10,7 +10,8 @@ def quit(*args):
 
 def clock_time():
 	time = datetime.datetime.now() #gets current time
-	time = (time.strftime("%H:%M:%S")) #time format
+	#time = (time.strftime("%H:%M:%S")) #time format
+	time = (time.strftime("%d-%m-%y   %H:%M:%S")) #time woth date format
 
 	txt.set(time)
 
@@ -24,7 +25,7 @@ root.bind("x", quit)
 root.after(1000, clock_time)
 
 #these variables are for the clock itself
-fnt = tkFont.Font(family = 'Helvetics', size = 120, weight = 'bold')
+fnt = tkFont.Font(family = 'Helvetics', size = 80, weight = 'bold')
 txt = StringVar()
 lbl = ttk.Label(root, textvariable = txt, font = fnt, foreground = "white", background = "black")
 lbl.place(relx = 0.5, rely = 0.5, anchor = CENTER) #aling the clock to the center
