@@ -11,7 +11,7 @@ def quit(*args):
 def clock_time():
 	time = datetime.datetime.now() #gets current time
 	#time = (time.strftime("%H:%M:%S")) #time format
-	time = (time.strftime("%Y-%m-%y   %H:%M:%S")) #time woth date format
+	time = (time.strftime("%d-%m-%Y   %H:%M:%S")) #time woth date format
 
 	txt.set(time)
 
