@@ -5,18 +5,17 @@ __metaclass__ = type
 class application(Frame):
 	#used to initialize an instance
 	def __init__(self, master): 
-
-		Frame.__init__(self, master) #(visit for the doc)https://docs.python.org/2.7/library/tkinter.html#the-window-manager
+		Frame.__init__(self, master)#(visit for the doc)https://docs.python.org/2.7/library/tkinter.html#the-window-manager
 		self.task = ""
 		self.UserIn = StringVar()
 		self.grid()
-		self.create_widgets()
+		self.createWidgets()
 
 
 
-	def create_widgets(self):
+	def createWidgets(self):
 		self.user_input = Entry(self, bg = "#5bc8ac", bd = 10,
-			insertwidth = 4, width = 24,
+			insertwidth = 4, width = 23,
 			font = ("Verdana", 20, "bold"), textvariable = self.UserIn,
 					justify = RIGHT)
 		self.user_input.grid(columnspan = 4)
@@ -25,7 +24,7 @@ class application(Frame):
 
 
 
-
+		#digit buttons
 		self.button1 = Button(self, bg = "#98dbc6", bd = 5,
 						text = "7", padx = 35,  pady = 25, font =("Helvetica", 20, "bold"),
 						command = lambda:self.buttonClick(7))
@@ -85,43 +84,49 @@ class application(Frame):
 						command = lambda:self.buttonClick(0))
 		self.button10.grid(row = 5, column = 0, sticky = W)
 
-
-
-		self.addbutton = Button(self, bg = "#98dbc6", bd = 5,
-						text = "+", padx = 35, pady = 25, font = ("Helvetica", 20, "bold"),
+		#operation buttons
+		self.add_button = Button(self, bg = "#98dbc6", bd = 5,
+						text = "+", padx = 33, pady = 24, font = ("Helvetica", 20, "bold"),
 						command = lambda:self.buttonClick("+"))
-		self.addbutton.grid(row = 2, column = 3, sticky = W)
+		self.add_button.grid(row = 2, column = 3, sticky = W)
 
-		self.subbutton = Button(self, bg = "#98dbc6", bd = 5,
-						text = "-", padx = 35, pady = 25, font = ("Helvetica", 20, "bold"),
+		self.sub_button = Button(self, bg = "#98dbc6", bd = 5,
+						text = "-", padx = 37, pady = 24, font = ("Helvetica", 20, "bold"),
 						command = lambda:self.buttonClick("-"))
-		self.subbutton.grid(row = 3, column = 3, sticky= W)
+		self.sub_button.grid(row = 3, column = 3, sticky= W)
 
-		self.mulbutton = Button(self, bg = "#98dbc6", bd = 5,
-						text = "*", padx = 35, pady = 25, font = ("Helvetica", 20, "bold"),
+		self.mul_button = Button(self, bg = "#98dbc6", bd = 5,
+						text = "*", padx = 36, pady = 24, font = ("Helvetica", 20, "bold"),
 						command = lambda:self.buttonClick("*"))
-		self.mulbutton.grid(row = 4, column = 3, sticky = W)
+		self.mul_button.grid(row = 4, column = 3, sticky = W)
 
-		self.divbutton = Button(self, bg = "#98dbc6", bd = 5,
-						text = "/", padx = 35, pady = 25, font = ("Helvetica", 20, "bold"),
+		self.div_button = Button(self, bg = "#98dbc6", bd = 5,
+						text = "/", padx = 37, pady = 25, font = ("Helvetica", 20, "bold"),
 						command = lambda:self.buttonClick("/"))
-		self.divbutton.grid(row = 5, column = 3, sticky = W)
+		self.div_button.grid(row = 5, column = 3, sticky = W)
 
 
-
-		self.equalbutton = Button(self, bg = "#e6d72a", bd = 5,
+		self.equal_button = Button(self, bg = "#e6d72a", bd = 5,
 							text = "=", padx = 95, pady = 25, font = ("Helvetica", 20, "bold"),
 							command = self.calculateTask)
-		self.equalbutton.grid(row = 5, column = 1, sticky = W, columnspan = 2)
+		self.equal_button.grid(row = 5, column = 1, sticky = W, columnspan = 2)
 
-		self.clearDisplay = Button(self, bg = "#e6d72a", bd = 5,
-							text = "AC", width = 28, padx = 5, font = ("Helvetica", 20, "bold"),
+		#all-clear button
+		self.clear_display = Button(self, bg = "#e6d72a", bd = 5,
+							text = "AC", width = 28, pady = 7, font = ("Helvetica", 20, "bold"),
 							command = self.clearDisplay)
-		self.clearDisplay.grid(row = 1, columnspan = 4, sticky = W)
+		self.clear_display.grid(row = 1, columnspan = 4, sticky = W)
+
+
 
 	def buttonClick(self, number):
 		self.task = str(self.task) + str(number)
 		self.UserIn.set(self.task)
+
+		
+	def displayText(self, value):
+		self.user_input.delete(0, END)
+		self.user_input.insert(0, value)
 
 	def calculateTask(self):
 		self.data = self.user_input.get()
@@ -133,10 +138,6 @@ class application(Frame):
 		except SyntexError as e:
 			self.displayText("Invalid Syntax!")
 			self.task = ""
-		
-	def displayText(self, value):
-		self.user_input.delete(0, END)
-		self.user_input.insert(0, value)
 
 	def clearDisplay(self):
 		self.task = ""
@@ -151,5 +152,5 @@ app = application(calculator)
 
 # window cant be resized
 calculator.resizable(width = False, height = False)
-
+#prevents app window from getting closed by looping
 calculator.mainloop()
